@@ -11,23 +11,49 @@ const Accordion = () => {
     setSelected(getCurrentId === selected ? null : getCurrentId);
   }
 
+  function handleMultiSelection(getCurrentId) {
+    let copyMultiple = [...multiple];
+    const findIndexOfCurrentId = copyMultiple.indexOf(getCurrentId);
+
+    if (findIndexOfCurrentId === -1) {
+      copyMultiple.push(getCurrentId);
+    } else {
+      copyMultiple.splice(findIndexOfCurrentId, 1);
+    }
+
+    setMultiple(copyMultiple);
+  }
+
+  console.log(selected, multiple);
+
   return (
     <div className="wrapper">
-      <button >Enable Multi selection </button>
+      <button
+        onClick={function (e) {
+          e.target.classList.toggle("active");
+          setEnableMultiSelection(!enableMultiSelection);
+        }}
+      >
+        Enable Multi selection{" "}
+      </button>
       <div className="accordion">
         {accordionData && accordionData.length > 0 ? (
           accordionData.map((data) => (
             <div key={data.id} className="item">
               <div
-                onClick={() => handleSingleSelection(data.id)}
+                onClick={
+                  enableMultiSelection
+                    ? () => handleMultiSelection(data.id)
+                    : () => handleSingleSelection(data.id)
+                }
                 className="title"
               >
                 <h3>{data.question}</h3>
                 <span>+</span>
               </div>
-              {selected === data.id && (
+              {selected === data.id || multiple.indexOf(data.id) !== -1 ? (
                 <div className="content">{data.answer}</div>
-              )}
+              ) : null}
             </div>
           ))
         ) : (
