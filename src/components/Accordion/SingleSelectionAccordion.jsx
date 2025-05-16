@@ -11,7 +11,7 @@ const Accordion = () => {
   }
 
   return (
-    <div className="wrapper">
+    <section className="section wrapper">
       <div className="accordion">
         {accordionData && accordionData.length > 0 ? (
           accordionData.map((data) => (
@@ -32,7 +32,7 @@ const Accordion = () => {
           <div>Data not found</div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

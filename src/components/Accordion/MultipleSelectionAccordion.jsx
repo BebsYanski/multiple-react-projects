@@ -27,7 +27,7 @@ const Accordion = () => {
   console.log(selected, multiple);
 
   return (
-    <div className="wrapper">
+    <section className="section wrapper">
       <button
         onClick={function (e) {
           e.target.classList.toggle("active");
@@ -60,7 +60,7 @@ const Accordion = () => {
           <div>Data not found</div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
