@@ -13,7 +13,7 @@ const FreeApi = () => {
   }, []);
 
   return (
-    <section className="section">
+    <section className="section container">
       <h1>Free Api</h1>
       <div className="grid-container">
         {items.map((item) => (
