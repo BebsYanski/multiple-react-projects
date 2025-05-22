@@ -5,6 +5,7 @@ import Accordion from "./components/Accordion/MultipleSelectionAccordion";
 import StarRating from "./components/star-rating/StarRating";
 import "./App.css";
 import ImageSlider from "./components/image-slider";
+import LoadMoreData from "./components/load-more-data";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         limit={"10"}
         page={1}
       />
+      <LoadMoreData />
     </div>
   );
 }
