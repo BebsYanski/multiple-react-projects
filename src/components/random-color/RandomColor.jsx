@@ -82,9 +82,9 @@ const RandomColor = () => {
           onClick={handleRandomColorGeneration}
         />
       </div>
-      <div className="color-info flex justify-center items-center text-4xl text-white gap-4 h-[100%] flex-col">
+      <div className="color-info flex items-center lg:justify-center text-2xl md:text-4xl text-white gap-4 h-[100%] flex-col">
         <h2>{typeOfColor.toUpperCase()} Color</h2>
-        <h3 className="text-6xl font-black">{color}</h3>
+        <h3 className="text-4xl md:text-6xl font-black">{color}</h3>
         <button
           className="px-2 py-1 m-4 border-0 bg-black rounded cursor-pointer"
           onClick={() => {
