@@ -6,6 +6,8 @@ import StarRating from "./components/star-rating/StarRating";
 import "./App.css";
 import ImageSlider from "./components/image-slider";
 import LoadMoreData from "./components/load-more-data";
+import TreeView from "./components/tree-menu";
+import { sideMenu } from "./components/tree-menu/data";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         page={1}
       />
       <LoadMoreData />
+      <TreeView menu={sideMenu} />
     </div>
   );
 }
