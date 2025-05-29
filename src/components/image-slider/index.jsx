@@ -50,7 +50,7 @@ const ImageSlider = ({ url, limit, page }) => {
   return (
     <div className="section container img-container">
       <BsArrowLeftCircleFill
-        className="arrow arrow-left"
+        className="arrow arrow-left" 
         onClick={handlePrev}
       />
       {images && images.length
